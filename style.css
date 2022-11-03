@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+:root {
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+html {
+  font-size: 13px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--Very-Light-Gray);
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.--container {
+  margin-inline: 0.8rem;
+  margin-block: 2rem;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+.desc {
+  font-size: 0.8rem;
+  color: var(--Grayish-Blue);
+}
+
+.header {
+  text-align: center;
+}
+
+.header span {
+  color: var(--Grayish-Blue);
+  font-weight: 200;
+  display: block;
+}
+
+.header .desc {
+  margin-top: 2rem;
+  max-width: 58ch;
+}
+
+.service {
+  background-color: white;
+  max-width: 300px;
+  padding: 2rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 10px 15px -5px var(--Grayish-Blue);
+}
+
+.service.--cyen {
+  border-top: var(--Cyan) 5px solid;
+}
+
+.service.--blue {
+  border-top: var(--Blue) 5px solid;
+}
+.service.--red {
+  border-top: var(--Red) 5px solid;
+}
+.service.--orange {
+  border-top: var(--Orange) 5px solid;
+}
+
+.service .title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.service img {
+  max-width: 3rem;
+  margin-top: 2rem;
+  align-self: flex-end;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3%;
+  margin-bottom: 10vh;
+}
+
+@media (min-width: 395px) {
+  html {
+    font-size: 15px;
+  }
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 810px) {
+  .services {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .service:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+  }
+  .service:nth-child(2) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  .service:nth-child(3) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 5;
+  }
+  .service:nth-child(4) {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+  }
+}
